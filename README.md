@@ -41,3 +41,17 @@ Integrantes: Juárez Fernández Eric Aarón, Zenón Regalado Vicente de Jesús
 
 #Proceso principal (comentar opiniones sobre canciones y calificarlas)
 
+![Untitled-1](https://github.com/user-attachments/assets/1fd08178-e728-4bdf-b14b-0153c21d35a8)
+
+
+#Otras funcionalidades
+* ver y buscar artistas
+![Untitled-2](https://github.com/user-attachments/assets/be04d13a-0875-4a54-978d-2b7c4a10cb8e)
+
+*ver informacion de los artistas, como los albumes y sus canciones
+![Untitled-1](https://github.com/user-attachments/assets/c48ae034-e213-4e72-9181-d122ac3af5b3)
+
+*Ver y crear playlist personales
+![Untitled-2](https://github.com/user-attachments/assets/c64f27db-734f-4443-b4ce-51a50de87e86)
+
+* 
