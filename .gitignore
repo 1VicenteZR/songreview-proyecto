@@ -1,0 +1,30 @@
+# Laravel
+/vendor
+/node_modules
+.env
+.env.*.php
+Homestead.json
+Homestead.yaml
+/public/storage
+/storage/*.key
+.phpunit.result.cache
+
+# Laravel IDE helper
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+
+# Angular
+/dist
+/.angular
+/node_modules
+/src/environments/*.ts
+*.log
+
+# General
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+*.bak
+*.tmp
