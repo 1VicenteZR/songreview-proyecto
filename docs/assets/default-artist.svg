@@ -1,0 +1,17 @@
+<!-- SVG placeholder for default artist image -->
+<svg width="280" height="280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="artistGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#9333ea;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <circle cx="140" cy="140" r="140" fill="url(#artistGradient)" />
+  <g transform="translate(140,140)">
+    <!-- Microphone icon -->
+    <path d="M0,-50 Q-20,-50 -20,-30 L-20,10 Q-20,30 0,30 Q20,30 20,10 L20,-30 Q20,-50 0,-50 Z" fill="white" opacity="0.8"/>
+    <rect x="-2" y="30" width="4" height="20" fill="white" opacity="0.8"/>
+    <rect x="-15" y="48" width="30" height="4" fill="white" opacity="0.8"/>
+  </g>
+</svg>
