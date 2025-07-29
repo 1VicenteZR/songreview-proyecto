@@ -171,3 +171,218 @@ OPTIONS /{any}                           # Manejo de preflight CORS
 | **Búsqueda** | 1 | Búsqueda inteligente global |
 | **CORS** | 1 | Soporte para frontend |
 
+
+
+
+
+
+
+**Framework Principal:**
+- **Angular 20.0.0** (última versión)
+- **TypeScript 5.8.2**
+- **Node.js** + **Express 5.1.0**
+
+**Dependencias principales:**
+```json
+{
+  "@angular/core": "^20.0.0",
+  "@angular/forms": "^20.0.0",      // Para formularios reactivos
+  "@angular/router": "^20.0.0",     // Para rutas
+  "@angular/common": "^20.0.0",     // Pipes y directivas comunes
+  "@angular/ssr": "^20.0.5",        // Server-Side Rendering
+  "rxjs": "~7.8.0",                 // Programación reactiva
+  "zone.js": "~0.15.0"              // Detección de cambios
+}
+```
+
+**Herramientas de desarrollo:**
+```json
+{
+  "@angular/cli": "^20.0.5",        // CLI de Angular
+  "@angular/build": "^20.0.5",     // Sistema de build
+  "jasmine": "~5.7.0",             // Testing framework
+  "karma": "~6.4.0",               // Test runner
+  "typescript": "~5.8.2"           // Compilador TypeScript
+}
+```
+
+**Configuraciones especiales:**
+- **SSR habilitado** (Server-Side Rendering)
+- **Prettier configurado** para HTML Angular
+- **TypeScript estricto** activado
+- **Standalone components** (sin NgModules)
+- **Puerto de desarrollo:** 4200
+- **Soporte para assets** en public y `src/assets/`
+
+**Backend esperado:**
+- **Laravel API** en `http://127.0.0.1:8000`
+- **Endpoints:** `/api/artistas`, `/api/albumes`, `/api/canciones`, `/api/usuarios`, `/api/calificaciones-cancion`
+
+**Estructura de assets:**
+- Imágenes en assets
+- SVGs por defecto para álbumes y artistas
+- Soporte para carga de archivos (imágenes de artistas/álbumes)
+
+
+
+
+**Requisitos mínimos del sistema:**
+
+**Software base:**
+- **XAMPP 8.0+** (incluye Apache + MySQL + PHP)
+- **Node.js 18+** (para Angular)
+- **npm 9+** (gestor de paquetes)
+- **Composer 2.0+** (para Laravel)
+
+**Base de datos:**
+- **MySQL 8.0+** (incluido en XAMPP)
+- **phpMyAdmin** (para gestión visual de BD)
+
+**Navegador:**
+- **Chrome 100+**, **Firefox 100+**, **Edge 100+** o **Safari 15+**
+
+**Estructura de servicios:**
+
+**Frontend (Angular):**
+```
+Puerto: 4200
+URL: http://localhost:4200
+Comando: npm start
+```
+
+**Backend (Laravel):**
+```
+Puerto: 8000
+URL: http://127.0.0.1:8000
+Comando: php artisan serve
+```
+
+**Base de datos (MySQL):**
+```
+Puerto: 3306
+Host: localhost
+Usuario: root
+Contraseña: (vacía por defecto)
+```
+
+**Configuración mínima:**
+- **RAM:** 4GB mínimo, 8GB recomendado
+- **Espacio en disco:** 2GB libres
+- **PHP:** 8.1+ con extensiones: mysql, pdo, json, mbstring
+
+**Pasos de instalación:**
+1. Instalar **XAMPP**
+2. Instalar **Node.js**
+3. Instalar **Composer**
+4. Crear base de datos en **phpMyAdmin**
+5. Configurar **Laravel** (.env)
+6. Ejecutar migraciones
+7. Iniciar ambos servidores
+
+
+
+
+
+**Instrucciones completas para ejecutar el proyecto:**
+
+**PASO 1: Preparar la Base de Datos**
+
+1. **Abrir XAMPP Control Panel**
+2. **Iniciar servicios:**
+   ```
+   ✅ Apache → Start
+   ✅ MySQL → Start
+   ```
+3. **Crear base de datos:**
+   - Ir a `http://localhost/phpmyadmin`
+   - Crear nueva base de datos: `song_review_db`
+   - Collation: `utf8mb4_unicode_ci`
+
+**PASO 2: Configurar Laravel (Backend)**
+
+1. **Navegar a la carpeta del backend:**
+   ```bash
+   cd ruta/del/proyecto/laravel
+   ```
+
+2. **Instalar dependencias:**
+   ```bash
+   composer install
+   ```
+
+3. **Configurar archivo .env:**
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=song_review_db
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+4. **Ejecutar migraciones:**
+   ```bash
+   php artisan migrate
+   ```
+
+5. **Iniciar servidor Laravel:**
+   ```bash
+   php artisan serve
+   ```
+   ✅ **Resultado:** `http://127.0.0.1:8000`
+
+**PASO 3: Configurar Angular (Frontend)**
+
+1. **Abrir nueva terminal**
+2. **Navegar a la carpeta del frontend:**
+   ```bash
+   cd ruta/del/proyecto/song-review-app
+   ```
+
+3. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
+
+4. **Iniciar servidor Angular:**
+   ```bash
+   npm start
+   ```
+**Resultado:** `http://localhost:4200`
+
+**PASO 4: Verificar que todo funciona**
+
+1. **Backend funcionando:**
+   - Ir a `http://127.0.0.1:8000/api/artistas`
+   - Debe mostrar JSON (aunque esté vacío)
+
+2. **Frontend funcionando:**
+   - Ir a `http://localhost:4200`
+   - Debe cargar la aplicación
+
+3. **Panel admin:**
+   - Ir a `http://localhost:4200/home-admin`
+   - Debe cargar el panel de administración
+
+**COMANDOS RÁPIDOS:**
+
+**Para iniciar todo el proyecto:**
+```bash
+# Terminal 1 - Laravel
+cd proyecto/laravel
+php artisan serve
+
+# Terminal 2 - Angular  
+cd proyecto/song-review-app
+npm start
+
+# XAMPP - Encender Apache y MySQL
+```
+
+**Solución de problemas comunes:**
+
+- **Error de conexión DB:** Verificar que MySQL esté corriendo en XAMPP
+- **Puerto ocupado:** Cambiar puerto con `ng serve --port 4201`
+- **Error de CORS:** Verificar que Laravel esté en puerto 8000
+- **Error 404 Laravel:** Ejecutar `php artisan route:list` para ver rutas
+
